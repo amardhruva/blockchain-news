@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="row text-center">
+      <div class="blog-box-image">
+        <img src="{% url 'stories:image' hash=image %}" class="img-responsive" alt="">
+      </div>
+    <div class="blog-box-content">
+      <h1><a href="#" >{{ title }}</a></h1>
+      <p>{{ text }}</p>
+    </div>
+    </div>
+{% endblock %}

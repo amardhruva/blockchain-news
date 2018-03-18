@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="row text-center">
+  {% for el in news %}
+  <div class="col-sm-6 col-mid-4" >
+    <div class="blog-box">
+      <div class="blog-box-image">
+        <img src="{% url 'stories:image' hash=el.image %}" class="img-responsive" alt="">
+      </div>
+      <div class="blog-box-content">
+        <h4><a href="#" >{{ el.text.0 }}</a></h4>
+        <p>{{ el.text.1 }}</p>
+        <a href="{% url 'stories:shownews' newsid=el.id %}" class="btn btn-default site-btn">READ MORE</a>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+{% endblock %}
